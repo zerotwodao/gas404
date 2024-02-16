@@ -126,7 +126,7 @@ contract Gas404 is DN404, Ownable {
     function _mint(address to, uint256 amount) internal virtual override {
         super._mint(to, amount);
         
-        if (uint256(_getDN404Storage().totalSupply) <= MAX_SUPPLY) {
+        if (uint256(_getDN404Storage().totalSupply) > MAX_SUPPLY) {
             revert TotalSupplyOverflow();
         }
     }
