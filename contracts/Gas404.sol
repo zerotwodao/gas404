@@ -62,17 +62,7 @@ contract Gas404 is DN404, Ownable {
         emit OpenSourceNotACrime(true);
     }
 
-    /**
-     * @dev If more than 1 wei is sent use receive() function and consider received ETH as a donation
-     */
     receive() external payable override {
-        mint(1);
-    }
-
-    /**
-     * @dev fallback called if fnSelector is not for DN404Mirror and the msg.value is zero
-     */
-    fallback() external payable virtual override dn404Fallback {
         mint(1);
     }
 
