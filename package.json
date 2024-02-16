@@ -7,7 +7,7 @@
     "hardhat-tracer": "^2.8.0"
   },
   "dependencies": {
-    "dn404": "^0.0.1",
+    "dn404": "^0.0.2",
     "solady": "^0.0.168"
   }
 }
