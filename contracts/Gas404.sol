@@ -101,11 +101,13 @@ contract Gas404 is DN404, Ownable {
     }
 
     function airdrop(Airdrop[] memory recipients) external onlyOwner {
+        uint256 _airdroppedAmount = airdroppedAmount;
+
         for (uint256 i; i < recipients.length; ++i) {
             Airdrop memory recipient = recipients[i];
             uint256 airdropAmount = recipient.amount * 1 ether;
 
-            airdroppedAmount += airdropAmount;
+            _airdroppedAmount += airdropAmount;
 
             if (!getCode(recipient.recipient)) {
                 _setSkipNFT(recipient.recipient, true);
@@ -116,7 +118,9 @@ contract Gas404 is DN404, Ownable {
             }
         }
 
-        require(airdroppedAmount <= AIRDROP_SUPPLY, 'OVERMINT');
+        require(_airdroppedAmount <= AIRDROP_SUPPLY, 'OVERMINT');
+
+        airdroppedAmount = _airdroppedAmount;
     }
 
     function _mint(address to, uint256 amount) internal virtual override {
