@@ -96,6 +96,8 @@ contract Gas404 is DN404, Ownable {
         mintedAmount += mintAmount;
         _mint(msg.sender, mintAmount);
 
+        require(mintedAmount <= MINTING_SUPPLY, 'OVERMINT');
+
         // Support the on-chain petition to defend open-source development, open source is not a crime.
         emit OpenSourceNotACrime(true);
     }
