@@ -6,15 +6,19 @@ A [DN404 🥜](https://github.com/Vectorized/dn404) contract that mints tokens a
 - 💎 Limited to 888,888 $OIL supply
 - ✅ Fully compliant with ERC20 and ERC721
 
+## Contract 📝
+
+https://etherscan.io/token/0x730d2B69798c6ad9192Ec426E9C9de5f587DC169
+
 ## Disclaimer 🧪
 
 This is a highly experimental software that relies on a state of Ethereum Mainnet and by using it, we don't have any liabilities nor guarentee that it should be considered as an investment, securities, insurance, or any type of financial contract. This software doesn't have any boundaries so feel free to use this open source software.
 
 ## Audit ✅
 
-In progress
+- First reviewed and bug fixed by [@AmadiMichael](https://github.com/AmadiMichael)
 
-## Tests
+## Tests 👨
 
 We test in prod. Yolo.
 

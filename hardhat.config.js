@@ -8,6 +8,15 @@ module.exports = {
     hardhat: {
       chainId: Number(process.env.HARDHAT_CHAIN_ID ?? 31337)
     },
+    mainnet: {
+      url: 'https://ethereum.llamarpc.com',
+      chainId: 1,
+    }
+  },
+  etherscan: {
+    // Your API key for Etherscan
+    // Obtain one at https://etherscan.io/
+    apiKey: process.env.ETHERSCAN
   },
   solidity: {
     compilers: [
