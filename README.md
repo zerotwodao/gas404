@@ -6,6 +6,10 @@ A [DN404 🥜](https://github.com/Vectorized/dn404) contract that mints tokens a
 - 💎 Limited to 888,888 $OIL supply
 - ✅ Fully compliant with ERC20 and ERC721
 
+## How this started
+
+https://github.com/Vectorized/dn404/issues/72#issuecomment-1947804564
+
 ## Contract 📝
 
 https://etherscan.io/token/0x730d2B69798c6ad9192Ec426E9C9de5f587DC169
