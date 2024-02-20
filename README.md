@@ -14,6 +14,8 @@ https://github.com/Vectorized/dn404/issues/72#issuecomment-1947804564
 
 https://etherscan.io/token/0x730d2B69798c6ad9192Ec426E9C9de5f587DC169
 
+Wrapped: https://etherscan.io/token/0xa28f31e5f0134645ac771468a3e312219cdaa201
+
 ## Disclaimer 🧪
 
 This is a highly experimental software that relies on a state of Ethereum Mainnet and by using it, we don't have any liabilities nor guarentee that it should be considered as an investment, securities, insurance, or any type of financial contract. This software doesn't have any boundaries so feel free to use this open source software.
