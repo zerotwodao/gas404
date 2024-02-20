@@ -11,7 +11,11 @@ module.exports = {
     mainnet: {
       url: 'https://ethereum.llamarpc.com',
       chainId: 1,
-    }
+    },
+    sepolia: {
+      url: 'https://ethereum-sepolia.publicnode.com',
+      chainId: 11155111,
+    },
   },
   etherscan: {
     // Your API key for Etherscan

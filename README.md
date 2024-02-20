@@ -20,7 +20,7 @@ This is a highly experimental software that relies on a state of Ethereum Mainne
 
 ## Audit ✅
 
-- First reviewed and bug fixed by [@AmadiMichael](https://github.com/AmadiMichael)
+- [Gas404.sol contract reviewed and bug fixed by @AmadiMichael](https://twitter.com/AmadiMichaels/status/1759623963896860794)
 
 ## Tests 👨
 
