@@ -26,7 +26,15 @@ contract WrappedGas404 is ERC20, ERC20Burnable, ERC20Permit, Ownable {
 
     IERC20 public Gas404;
 
-    constructor(address _Gas404) ERC20('WrappedGas404', 'WGAS') ERC20Permit('WrappedGas404') Ownable(msg.sender) {
+    address public PancakeV2Pair;
+    address public PancakeV3Pair;
+    bool public isPancakeRestricted;
+
+    error PancakeV2NotAvailable();
+
+    error PancakeV3NotAvailable();
+
+    constructor(address _Gas404) ERC20('Gas404', 'GAS') ERC20Permit('Gas404') Ownable(msg.sender) {
         Gas404 = IERC20(_Gas404);
 
         address owner_ = msg.sender;
@@ -61,6 +69,33 @@ contract WrappedGas404 is ERC20, ERC20Burnable, ERC20Permit, Ownable {
     }
 
     /**
+     * Restrict Pancake Pools for low liquidity
+     */
+    function _update(address from, address to, uint256 value) internal override {
+        if (isPancakeRestricted) {
+            if (from == PancakeV2Pair || to == PancakeV2Pair) {
+                revert PancakeV2NotAvailable();
+            }
+            if (from == PancakeV3Pair || to == PancakeV3Pair) {
+                revert PancakeV2NotAvailable();
+            }
+        }
+        super._update(from, to, value);
+    }
+
+    function setPancakeV2(address pair) external onlyOwner {
+        PancakeV2Pair = pair;
+    }
+
+    function setPancakeV3(address pair) external onlyOwner {
+        PancakeV3Pair = pair;
+    }
+
+    function setPancake() external onlyOwner {
+        isPancakeRestricted = (!isPancakeRestricted) ? true : false; 
+    }
+
+    /**
      * Minting related functions
      */
     modifier onlyMinter() {
@@ -82,10 +117,6 @@ contract WrappedGas404 is ERC20, ERC20Burnable, ERC20Permit, Ownable {
         require(_minters.contains(_minter), 'INVALID_MINTER');
         _minters.remove(_minter);
         emit RemoveMinter(_minter);
-    }
-
-    function mint(uint256 amount) external onlyMinter {
-        _mint(msg.sender, amount);
     }
 
     function mint(address to, uint256 amount) public onlyMinter {
